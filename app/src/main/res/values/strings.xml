@@ -2,4 +2,9 @@
     <string name="app_name">MyTaxi</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="my_trips">Мои поездки</string>
+    <string name="wallet">Способы оплаты</string>
+    <string name="favorite_places">Избранные адреса</string>
+    <string name="mock_hint">5a улица Асадуллы Ходжаева</string>
+    <string name="where">Куда?</string>
 </resources>
