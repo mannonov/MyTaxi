@@ -6,6 +6,7 @@ import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import androidx.core.view.WindowInsetsControllerCompat
 import androidx.navigation.fragment.NavHostFragment
 import uz.behadllc.mytaxi.R
 import uz.behadllc.mytaxi.databinding.ActivityMainBinding
@@ -17,7 +18,6 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
-
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             //make fullscreen, so we can draw behind status bar
             window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN or
@@ -26,6 +26,8 @@ class MainActivity : AppCompatActivity() {
             //make status bar color transparent
             window.statusBarColor = Color.TRANSPARENT
         }
+
+        WindowInsetsControllerCompat(window,window.decorView).isAppearanceLightStatusBars = true
 
         setContentView(binding.root)
 

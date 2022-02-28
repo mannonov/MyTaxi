@@ -4,8 +4,11 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/PetProjects/MyTaxi/app/src/main/res/drawable/fab_background.xml" value="0.1995" />
+        <entry key="..\:/PetProjects/MyTaxi/app/src/main/res/drawable/ic_end_point.xml" value="0.1985" />
         <entry key="..\:/PetProjects/MyTaxi/app/src/main/res/drawable/ic_menu.xml" value="0.1995" />
         <entry key="..\:/PetProjects/MyTaxi/app/src/main/res/drawable/ic_wallet.xml" value="0.1985" />
+        <entry key="..\:/PetProjects/MyTaxi/app/src/main/res/drawable/mini_circle.xml" value="0.1985" />
+        <entry key="..\:/PetProjects/MyTaxi/app/src/main/res/drawable/mini_trip_background.xml" value="0.1985" />
         <entry key="..\:/PetProjects/MyTaxi/app/src/main/res/drawable/round_shape.xml" value="0.1985" />
         <entry key="..\:/PetProjects/MyTaxi/app/src/main/res/drawable/rounded_down.xml" value="0.1985" />
         <entry key="..\:/PetProjects/MyTaxi/app/src/main/res/drawable/rounded_layout.xml" value="0.1995" />
@@ -19,6 +22,8 @@
         <entry key="..\:/PetProjects/MyTaxi/app/src/main/res/layout/fragment_trip_details.xml" value="0.27447916666666666" />
         <entry key="..\:/PetProjects/MyTaxi/app/src/main/res/layout/fragment_trips.xml" value="0.27447916666666666" />
         <entry key="..\:/PetProjects/MyTaxi/app/src/main/res/layout/home_header_layout.xml" value="0.264" />
+        <entry key="..\:/PetProjects/MyTaxi/app/src/main/res/layout/item_mini_trip.xml" value="0.4" />
+        <entry key="..\:/PetProjects/MyTaxi/app/src/main/res/layout/item_trips.xml" value="0.27447916666666666" />
         <entry key="..\:/PetProjects/MyTaxi/app/src/main/res/layout/navigation_item.xml" value="0.4" />
         <entry key="..\:/PetProjects/MyTaxi/app/src/main/res/menu/home_menu.xml" value="0.27447916666666666" />
       </map>

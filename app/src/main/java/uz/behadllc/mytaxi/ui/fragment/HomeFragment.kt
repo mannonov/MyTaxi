@@ -27,7 +27,7 @@ import com.google.android.material.navigation.NavigationView
 import uz.behadllc.mytaxi.R
 import uz.behadllc.mytaxi.databinding.FragmentHomeBinding
 
-class HomeFragment : Fragment(), NavigationView.OnNavigationItemSelectedListener {
+class HomeFragment : Fragment() {
 
 
     private val REQUEST_LOCATION_PERMISSION = 712
@@ -71,20 +71,17 @@ class HomeFragment : Fragment(), NavigationView.OnNavigationItemSelectedListener
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(requireActivity())
 
         getCurrentLocation()
-        setUpNavigationView()
 
         binding.imgNavigationHome.setOnClickListener {
             getCurrentLocation()
         }
-
-        binding.homeNavigation.setNavigationItemSelectedListener(this)
 
         binding.imgHomeMenu.setOnClickListener {
             binding.homeDrawer.openDrawer(Gravity.LEFT)
         }
 
         binding.trips.setOnClickListener {
-
+            findNavController().navigate(R.id.action_homeFragment_to_tripsFragment)
         }
 
     }
@@ -102,12 +99,6 @@ class HomeFragment : Fragment(), NavigationView.OnNavigationItemSelectedListener
             .addOnSuccessListener { location: Location ->
                 navigateCurrentLocation(location)
             }
-    }
-
-    private fun setUpNavigationView() {
-
-
-
     }
 
     private fun navigateCurrentLocation(location: Location) {
@@ -178,11 +169,4 @@ class HomeFragment : Fragment(), NavigationView.OnNavigationItemSelectedListener
             }
         }
     }
-
-    override fun onNavigationItemSelected(item: MenuItem): Boolean {
-        Log.d("NavigationViewItemClick", "onNavigationItemSelected: $item")
-        return true
-    }
-
-
 }

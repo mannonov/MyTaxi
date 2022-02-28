@@ -7,4 +7,9 @@
     <string name="favorite_places">Избранные адреса</string>
     <string name="mock_hint">5a улица Асадуллы Ходжаева</string>
     <string name="where">Куда?</string>
+    <string name="mock_data">6 Июля, Вторник</string>
+    <string name="mock_start_point">улица Sharof Rashidov, Ташкент</string>
+    <string name="mock_end_point">5a улица Асадуллы Ходжаева</string>
+    <string name="mock_time">21:53</string>
+    <string name="mock_price">12 900 cум</string>
 </resources>
