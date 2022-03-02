@@ -24,17 +24,22 @@ import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.*
 import com.google.android.material.navigation.NavigationView
+import org.koin.androidx.viewmodel.ext.android.viewModel
 import uz.behadllc.mytaxi.R
 import uz.behadllc.mytaxi.databinding.FragmentHomeBinding
+import uz.behadllc.mytaxi.viewmodel.TripsViewModel
 
 class HomeFragment : Fragment() {
 
 
     private val REQUEST_LOCATION_PERMISSION = 712
-    private lateinit var fusedLocationClient: FusedLocationProviderClient
+
     private lateinit var _binding: FragmentHomeBinding
     private val binding get() = _binding
+
     private lateinit var map: GoogleMap
+    private lateinit var fusedLocationClient: FusedLocationProviderClient
+
     private val TAG = "HomeFragment"
 
 

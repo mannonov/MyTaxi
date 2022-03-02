@@ -3,12 +3,11 @@ package uz.behadllc.mytaxi.ui.adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import uz.behadllc.mytaxi.R
 import uz.behadllc.mytaxi.databinding.ItemMiniTripBinding
-import uz.behadllc.mytaxi.model.MiniTrip
-import uz.behadllc.mytaxi.utils.TaxiType
+import uz.behadllc.mytaxi.model.TripX
+import uz.behadllc.mytaxi.utils.getCarImage
 
-class MiniTripsAdapter(private val miniTrips: List<MiniTrip>) :
+class MiniTripsAdapter(private val miniTrips: List<TripX>, private val tripClickListener:TripClickListener) :
     RecyclerView.Adapter<MiniTripsAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -26,19 +25,20 @@ class MiniTripsAdapter(private val miniTrips: List<MiniTrip>) :
             tvEndPoint.text = miniTrip.endPoint
             tvItemPrice.text = miniTrip.price
             tvItemTime.text = miniTrip.time
-            imgCarType.setImageResource(getCarImage(miniTrip.taxiType))
+            imgCarType.setImageResource(getCarImage(miniTrip.carType))
         }
+
+        holder.binding.root.setOnClickListener {
+            tripClickListener.onClick(miniTrip)
+        }
+
     }
 
     override fun getItemCount(): Int = miniTrips.size
 
-    private fun getCarImage(taxiType: TaxiType) : Int{
-        return when(taxiType){
-            TaxiType.DELIVERY -> R.drawable.ic_car_delivery
-            TaxiType.START -> R.drawable.ic_car_start
-            TaxiType.COMFORT -> R.drawable.ic_car_comfort
-        }
-    }
+
+
+    class TripClickListener(val onClick: (miniTrip: TripX) -> Unit)
 
     class ViewHolder(val binding: ItemMiniTripBinding) : RecyclerView.ViewHolder(binding.root)
 

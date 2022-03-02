@@ -23,6 +23,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/home_map"
             app:lottie_autoPlay="false"
+            android:layout_marginBottom="60dp"
             app:lottie_rawRes="@raw/map_point"
             app:lottie_speed="2" />
 
@@ -171,6 +172,8 @@
             android:scaleType="center"
             android:src="@drawable/ic_menu"
             app:elevation="10dp"
+            android:clickable="true"
+            android:focusable="true"
             android:background="@drawable/round_shape"
             app:layout_constraintBaseline_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -187,6 +190,8 @@
             android:scaleType="center"
             android:src="@drawable/ic_navigation"
             app:elevation="10dp"
+            android:clickable="true"
+            android:focusable="true"
             android:background="@drawable/round_shape"
             app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
             app:layout_constraintEnd_toEndOf="parent" />
@@ -210,6 +215,8 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/header_layout"
                 android:layout_width="277dp"
+                android:clickable="true"
+                android:focusable="true"
                 android:layout_height="88dp"
                 android:layout_marginHorizontal="16dp"
                 android:layout_marginTop="94dp"
@@ -259,6 +266,8 @@
                 android:id="@+id/trips"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:clickable="true"
+                android:focusable="true"
                 android:layout_marginHorizontal="28dp"
                 android:background="@color/black">
 
@@ -308,6 +317,8 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/wallet"
                 android:layout_width="match_parent"
+                android:clickable="true"
+                android:focusable="true"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="28dp"
                 android:background="@color/black">
@@ -358,6 +369,8 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/favorite_places"
                 android:layout_width="match_parent"
+                android:clickable="true"
+                android:focusable="true"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="28dp"
                 android:background="@color/black">

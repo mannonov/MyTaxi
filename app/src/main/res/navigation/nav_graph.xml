@@ -22,7 +22,12 @@
         android:id="@+id/tripDetailsFragment"
         android:name="uz.behadllc.mytaxi.ui.fragment.TripDetailsFragment"
         android:label="fragment_trip_details"
-        tools:layout="@layout/fragment_trip_details" />
+        tools:layout="@layout/fragment_trip_details" >
+
+        <argument
+            android:name="trip"
+            app:argType="string" />
+    </fragment>
     <fragment
         android:id="@+id/tripsFragment"
         android:name="uz.behadllc.mytaxi.ui.fragment.TripsFragment"

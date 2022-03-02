@@ -1,6 +1,12 @@
 package uz.behadllc.mytaxi.model
 
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+
+@Entity(tableName = "trip_table")
 data class Trip(
     val date: String,
-    val miniTrips: List<MiniTrip>,
+    @PrimaryKey
+    val id: String,
+    val trips: List<TripX>,
 )

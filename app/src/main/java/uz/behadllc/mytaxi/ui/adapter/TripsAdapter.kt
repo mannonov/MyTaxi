@@ -7,7 +7,10 @@ import androidx.recyclerview.widget.RecyclerView
 import uz.behadllc.mytaxi.databinding.ItemTripsBinding
 import uz.behadllc.mytaxi.model.Trip
 
-class TripsAdapter(private val trips: List<Trip>) :
+class TripsAdapter(
+    private var trips: List<Trip>,
+    private val tripClickListener: MiniTripsAdapter.TripClickListener,
+) :
     RecyclerView.Adapter<TripsAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -20,14 +23,21 @@ class TripsAdapter(private val trips: List<Trip>) :
         holder.binding.apply {
             tvTripDate.text = trips[position].date
             rvTripsAdapter.apply {
-                adapter = MiniTripsAdapter(miniTrips = trips[position].miniTrips)
+                adapter = MiniTripsAdapter(miniTrips = trips[position].trips, tripClickListener)
                 layoutManager = LinearLayoutManager(context)
             }
         }
 
     }
 
+
     override fun getItemCount(): Int = trips.size
+
+    fun sumbitList(trips:List<Trip>){
+        this.trips = emptyList()
+        this.trips = trips
+        notifyDataSetChanged()
+    }
 
     class ViewHolder(val binding: ItemTripsBinding) : RecyclerView.ViewHolder(binding.root)
 

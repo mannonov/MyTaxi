@@ -2,6 +2,8 @@ plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
     id 'com.google.android.libraries.mapsplatform.secrets-gradle-plugin'
+    id 'kotlin-kapt'
+    id 'androidx.navigation.safeargs.kotlin'
 }
 
 android {
@@ -55,5 +57,28 @@ dependencies {
 
     //Lottie
     implementation 'com.airbnb.android:lottie:5.0.1'
+
+    //Shimmer
+    implementation 'com.facebook.shimmer:shimmer:0.1.0@aar'
+
+    //Retrofit with GSON
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+
+    //Room
+    def roomVersion = "2.3.0"
+    implementation "androidx.room:room-runtime:$roomVersion"
+    kapt "androidx.room:room-compiler:$roomVersion"
+
+    // Koin for Kotlin apps
+    def koin_version = "3.1.2"
+    implementation "io.insert-koin:koin-android:$koin_version"
+
+    // LiveData
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.5.0-alpha03"
+
+    //gson
+    implementation 'com.google.code.gson:gson:2.8.9'
+
 
 }
