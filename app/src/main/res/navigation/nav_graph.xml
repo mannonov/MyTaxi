@@ -11,6 +11,8 @@
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
         <action
+            app:enterAnim="@anim/slide_right"
+            app:popEnterAnim="@anim/slide_right"
             android:id="@+id/action_homeFragment_to_tripsFragment"
             app:destination="@id/tripsFragment" />
     </fragment>
@@ -18,7 +20,12 @@
         android:id="@+id/tripDetailsFragment"
         android:name="uz.behadllc.mytaxi.ui.fragment.TripDetailsFragment"
         android:label="fragment_trip_details"
-        tools:layout="@layout/fragment_trip_details" />
+        tools:layout="@layout/fragment_trip_details" >
+
+        <argument
+            android:name="trip"
+            app:argType="string" />
+    </fragment>
     <fragment
         android:id="@+id/tripsFragment"
         android:name="uz.behadllc.mytaxi.ui.fragment.TripsFragment"
@@ -26,6 +33,8 @@
         tools:layout="@layout/fragment_trips" >
         <action
             android:id="@+id/action_tripsFragment_to_tripDetailsFragment"
+            app:enterAnim="@anim/slide_right"
+            app:popEnterAnim="@anim/slide_left"
             app:destination="@id/tripDetailsFragment" />
     </fragment>
 </navigation>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:id="@+id/group_1" android:checkableBehavior="single">
+        <item
+            android:id="@+id/trips"
+            android:icon="@drawable/ic_trips"
+            android:title="@string/my_trips" />
+    </group>
+
+    <group android:id="@+id/group_2" android:checkableBehavior="single">
+        <item
+            android:id="@+id/wallet"
+            android:icon="@drawable/ic_wallet"
+            android:title="@string/wallet" />
+    </group>
+
+    <group android:id="@+id/group_3" android:checkableBehavior="single">
+        <item
+            android:id="@+id/favorite"
+            android:icon="@drawable/ic_favorite"
+            android:title="@string/favorite_places" />
+    </group>
+
+</menu>
