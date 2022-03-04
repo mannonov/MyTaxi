@@ -26,5 +26,6 @@
     <color name="text_normal_color_2">#B8B8B8</color>
     <color name="light_red_color">#FFEAE9</color>
     <color name="red_color">#FF453A</color>
+    <color name="polyline_color">#5B89FF</color>
 
 </resources>

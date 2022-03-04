@@ -1,9 +1,9 @@
-package uz.behadllc.mytaxi.network
+package uz.behadllc.mytaxi.network.trips
 
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-object ApiClient {
+object TripClient {
 
     private const val BASE_URL = "https://621e0195849220b1fc8c4ce9.mockapi.io/api/v1/"
 

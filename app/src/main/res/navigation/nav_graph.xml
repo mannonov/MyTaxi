@@ -11,10 +11,8 @@
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
         <action
-            app:enterAnim="@anim/slide_left"
-            app:exitAnim="@anim/wait_anim"
-            app:popEnterAnim="@anim/wait_anim"
-            app:popExitAnim="@anim/slide_right"
+            app:enterAnim="@anim/slide_right"
+            app:popEnterAnim="@anim/slide_right"
             android:id="@+id/action_homeFragment_to_tripsFragment"
             app:destination="@id/tripsFragment" />
     </fragment>
@@ -35,6 +33,8 @@
         tools:layout="@layout/fragment_trips" >
         <action
             android:id="@+id/action_tripsFragment_to_tripDetailsFragment"
+            app:enterAnim="@anim/slide_right"
+            app:popEnterAnim="@anim/slide_left"
             app:destination="@id/tripDetailsFragment" />
     </fragment>
 </navigation>

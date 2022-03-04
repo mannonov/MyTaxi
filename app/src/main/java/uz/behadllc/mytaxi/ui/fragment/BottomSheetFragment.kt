@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import com.bumptech.glide.Glide
 import com.google.android.gms.maps.model.LatLng
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
@@ -60,6 +61,7 @@ class BottomSheetFragment : Fragment() {
                     tvTripCost.text = it.tripPrice
                     tvTripPricePending.text = it.pricePending
                     tvTripTotalPrice.text = it.total
+//                    Glide.with(imgDriverImage.context).asBitmap().placeholder(R.drawable.img).load(it.driverImage).into(imgDriverImage)
                 }
             }
         }

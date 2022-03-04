@@ -163,7 +163,7 @@
                     android:text="@string/help"
                     android:textColor="@color/orange_color"
                     android:textSize="12sp"
-                    android:textStyle="normal"
+                    android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="@id/img_help"
                     app:layout_constraintStart_toStartOf="@id/img_help"
                     app:layout_constraintTop_toBottomOf="@id/img_help" />
@@ -200,7 +200,7 @@
                     android:text="@string/retry"
                     android:textColor="@color/blue_color"
                     android:textSize="12sp"
-                    android:textStyle="normal"
+                    android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="@id/img_retry"
                     app:layout_constraintStart_toStartOf="@id/img_retry"
                     app:layout_constraintTop_toBottomOf="@id/img_retry" />
@@ -236,7 +236,7 @@
                     android:text="@string/make_a_call"
                     android:textColor="@color/green"
                     android:textSize="12sp"
-                    android:textStyle="normal"
+                    android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="@id/img_call"
                     app:layout_constraintStart_toStartOf="@id/img_call"
                     app:layout_constraintTop_toBottomOf="@id/img_call" />
@@ -266,6 +266,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_driver" />
+
+
 
         <ImageView
             android:id="@+id/img_driver"

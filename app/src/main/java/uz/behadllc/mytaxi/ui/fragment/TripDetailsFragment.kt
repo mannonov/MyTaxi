@@ -1,6 +1,9 @@
 package uz.behadllc.mytaxi.ui.fragment
 
+import android.content.Context
 import android.content.res.Resources
+import android.graphics.Bitmap
+import android.graphics.Canvas
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -15,6 +18,7 @@ import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.*
+import com.google.android.material.bottomsheet.BottomSheetBehavior
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 import uz.behadllc.mytaxi.R
 import uz.behadllc.mytaxi.databinding.FragmentTripDetailsBinding
@@ -57,6 +61,25 @@ class TripDetailsFragment : Fragment() {
 
         setUpBottomSheet(args.trip)
 
+        binding.imgBackBtn.setOnClickListener {
+            requireActivity().onBackPressed()
+        }
+
+        val bottomSheetBehavior = BottomSheetBehavior.from(binding.tripDetailsBottomSheet)
+
+        bottomSheetBehavior.setBottomSheetCallback(object : BottomSheetBehavior.BottomSheetCallback() {
+            override fun onStateChanged(bottomSheet: View, newState: Int) {
+            }
+
+            override fun onSlide(bottomSheet: View, slideOffset: Float) {
+
+                binding.containerRoot.animate().alpha((slideOffset * 0.5).toFloat()).setDuration(0)
+                    .start()
+
+            }
+        })
+
+
     }
 
     private fun setUpBottomSheet(trip: String) {
@@ -84,42 +107,46 @@ class TripDetailsFragment : Fragment() {
 
         val polyline = PolylineOptions()
         polyline.addAll(coordinates)
-        polyline.width(15f)
-        polyline.color(ContextCompat.getColor(requireActivity(), R.color.black_text_color))
+        polyline.color(ContextCompat.getColor(requireActivity(), R.color.polyline_color))
         polyline.jointType(JointType.ROUND)
         polyline.startCap(SquareCap())
         polyline.endCap(SquareCap())
         polyline.geodesic(true)
         googleMap.addPolyline(polyline)
 
+        googleMap.addMarker(MarkerOptions()
+            .position(coordinates[0])
+            .icon(bitmapDescriptorFromVector(requireActivity(), R.drawable.ic_start_point))
+            .title("Marker start Point"))
+
+        googleMap.addMarker(MarkerOptions()
+            .position(coordinates[coordinates.size - 1])
+            .icon(bitmapDescriptorFromVector(requireActivity(), R.drawable.ic_end_point))
+            .title("Marker end Point"))
 
         val builder: LatLngBounds.Builder = LatLngBounds.Builder()
         for (coordinate in coordinates) {
             builder.include(coordinate)
         }
+
         googleMap.animateCamera(CameraUpdateFactory.newLatLngBounds(builder.build(), 0))
 
-//        googleMap.addGroundOverlay(
-//            GroundOverlayOptions()
-//                .position(coordinates[coordinates.size - 1], 150f)
-//                .zIndex(3f)
-//                .image(BitmapDescriptorFactory.fromResource(R.drawable.ic_start_point)
-//                ))
-//
-//        googleMap.addGroundOverlay(
-//            GroundOverlayOptions()
-//                .position(coordinates[0], 150f)
-//                .zIndex(3f)
-//                .image(BitmapDescriptorFactory.fromResource(R.drawable.ic_start_point)
-//                ))
 
     }
+    private fun bitmapDescriptorFromVector(context: Context, vectorResId: Int): BitmapDescriptor? {
+        return ContextCompat.getDrawable(context, vectorResId)?.run {
+            setBounds(0, 0, intrinsicWidth, intrinsicHeight)
+            val bitmap = Bitmap.createBitmap(intrinsicWidth, intrinsicHeight, Bitmap.Config.ARGB_8888)
+            draw(Canvas(bitmap))
+            BitmapDescriptorFactory.fromBitmap(bitmap)
+        }
+    }
 
-    private fun getCoordinates(trip:String) : ArrayList<LatLng> {
+    private fun getCoordinates(trip: String): ArrayList<LatLng> {
         val tripX = tripConvertor(trip)
         return ArrayList<LatLng>().apply {
             for (latlng in tripX!!.latlng) {
-                add(LatLng(latlng.lat,latlng.lng))
+                add(LatLng(latlng.lat, latlng.lng))
             }
         }
     }

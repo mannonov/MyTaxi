@@ -1,4 +1,4 @@
-package uz.behadllc.mytaxi.network
+package uz.behadllc.mytaxi.network.trips
 
 import retrofit2.Response
 import retrofit2.http.GET
